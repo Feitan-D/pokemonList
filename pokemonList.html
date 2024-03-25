@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Pokémon</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        .pokemon-list {
+            list-style: none;
+            padding: 0;
+        }
+        .pokemon-list li {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin-bottom: 5px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+    <ul id="pokemonList" class="pokemon-list"></ul>
+
+    <script>
+        // Lista de Pokémon para exibição
+        const pokemons = [
+            { nome: 'Bulbasaur', tipo: 'Grama/Venenoso' },
+            { nome: 'Charmander', tipo: 'Fogo' },
+            { nome: 'Squirtle', tipo: 'Água' },
+            // Adicione mais Pokémon aqui se desejar
+        ];
+
+        // Referência à lista no HTML
+        const lista = document.getElementById('pokemonList');
+
+        // Função para criar a lista de Pokémon
+        function criarListaPokemons() {
+            pokemons.forEach(pokemon => {
+                const item = document.createElement('li');
+                item.textContent = `${pokemon.nome} - Tipo: ${pokemon.tipo}`;
+                lista.appendChild(item);
+            });
+        }
+
+        // Chamada da função para criar a lista
+        criarListaPokemons();
+    </script>
+</body>
+</html>
